@@ -1,6 +1,5 @@
 function isOdd(a) {
-  a = a % 2;
-  if ( a === 0){
+  if ( a%2 === 0){
     return true;
   }
   else{
