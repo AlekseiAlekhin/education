@@ -1,5 +1,9 @@
 function factorial(n) {
-  // Напиши свой код здесь
+  let x = 1; // ввели переменную x для промежуточных вычислений 
+  for (let i = 1; i <= n ; i++ ){
+    x = x * i;
+  }
+  return x;
 }
 
 window.factorial = factorial;
