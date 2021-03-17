@@ -1,5 +1,6 @@
 function sum(a, b) {
-  //Напиши свой код здесь
+  let sum = a + b;
+  return sum;
 };
 
 window.sum = sum;
