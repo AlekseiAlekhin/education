@@ -1,5 +1,24 @@
 function basicCalc(operation, a, b) {
-  // Напиши свой код здесь
+   let result;
+  switch(operation){
+    case "+":
+      result = a + b;
+      return result;
+      break;
+      case "-":
+      result = a - b;
+      return result;
+      break;
+      case "*":
+      result = a * b;
+      return result;
+      break;
+      case "/":
+      result = a / b;
+      return result;
+      break;
+  }
+
 }
 
 window.basicCalc = basicCalc;
