@@ -1,7 +1,7 @@
 function isEqual(a, b) {
   let stringA;
   let stringB; 
-  if (null == a || null == b) {
+  if (null === a || null === b) {
     return false;
   }
   for (let key in a) {
