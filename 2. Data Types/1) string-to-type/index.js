@@ -14,7 +14,8 @@ function stringToType(str) {
   if(Number(str)){
     return parseInt(str);
   }
-    return str; 
+  
+  return str; 
 
  
 };
