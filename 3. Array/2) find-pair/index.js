@@ -1,6 +1,11 @@
 function findPair(arr) {
-  // Напиши свой код здесь
-};
+    let result = arr.find((item, index) =>
+        arr.indexOf(item) !== index);
+    if(result == undefined){
+        return null;
+    }
+    return result;
+}
 
 window.findPair = findPair;
 
