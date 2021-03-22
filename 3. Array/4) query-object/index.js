@@ -1,50 +1,29 @@
 function queryToObject(query) {
-    let obj = {};
-    let arrSome = `${query}`;
-    let arrString = ``;
-    for (let a of arrSome) {
-        switch (a) {
-            case '?':
-                break;
-            case '=':
-                arrString = arrString + ',';
-                break;
-            case '&':
-                arrString = arrString + ',';
-                break;
-            default:
-                arrString = arrString + a;
-                break;
+    const obj = {};
+    const arr = query.slice(1).split('&');
+    console.log(arr)
+    const array = arr.map((item) => item.split('='))
+    console.log('array', array)
+    array.forEach(function (item, index) {
+        if (Number(item[1])) {
+            obj[item[0]] = parseInt(item[1], 10);
+        } else {
+            switch (item[1]) {
+                case "true":
+                    obj[item[0]] = true;
+                    break;
+                case "false":
+                    obj[item[0]] = false;
+                    break;
+                case "0":
+                    obj[item[0]] = 0;
+                    break;
+                default:
+                    obj[item[0]] = item[1];
+                    break;
+            }
         }
-    }
-    console.log(arrString);
-    let array = arrString.split(',').map(function (item) {
-        if (Number(item)) {
-            return parseInt(item, 10);
-        }
-        switch (item) {
-            case "null":
-                return null;
-            case "undefined":
-                return undefined;
-            case "true":
-                return true;
-            case "false":
-                return false;
-            case "0":
-                return 0;
-            default:
-                return item;
-        }
-
     });
-    console.log(array);
-    for (let i = 0; i < array.length; i++) {
-        if (i % 2 === 0) {
-            obj[array[i]] = array[i + 1];
-        }
-        // console.log(obj)
-    }
     return obj;
 }
 
