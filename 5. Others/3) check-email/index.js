@@ -13,7 +13,8 @@
  */
 
 function isValidEmail(email) {
-  // Напиши свой код здесь
+    const exp = /@gmail.com/gmi;
+    return exp.test(email);
 }
 
 window.isValidEmail = isValidEmail;
