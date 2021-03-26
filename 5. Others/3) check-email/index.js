@@ -13,7 +13,7 @@
  */
 
 function isValidEmail(email) {
-    const exp = /@\w+\.\w+$/gmi;
+    const exp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gmi;
     return exp.test(email);
 }
 
