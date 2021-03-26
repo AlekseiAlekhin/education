@@ -1,11 +1,7 @@
- import isEqual from '/home/user/work/education/2. Data Types/3) is-equal-simple/index.js';
-
 function isEqualAdvances(a, b) {
-    if (a === null || b === null || Object.values(a).includes(undefined) || Object.values(b).includes(undefined)){
-        return isEqual(a, b);
-    }else{
-       return JSON.stringify(a) === JSON.stringify(b);
-    }
+    const strA = JSON.stringify(a, (key, item) => (item === undefined) ? item = 'undefined' : item);
+    const strB = JSON.stringify(b, (key, item) => (item === undefined) ? item = 'undefined' : item)
+    return strA === strB;
 }
 
 window.isEqualAdvances = isEqualAdvances;
